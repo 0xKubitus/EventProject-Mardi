@@ -1,5 +1,5 @@
 class Attendance < ApplicationRecord
-  #after_create :admin_booking_send #permet de lancer automatiquement cette methode quand une réservation est effectuée (ce qui se traduit par la creation en base d'une 'attendance' à un 'event' par un 'user/attendee')
+  after_create :admin_booking_send #permet de lancer automatiquement cette methode quand une réservation est effectuée (ce qui se traduit par la creation en base d'une 'attendance' à un 'event' par un 'user/attendee')
 
   #validates :stripe_customer_id,
    #presence: true,
