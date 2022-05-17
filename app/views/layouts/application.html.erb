@@ -29,28 +29,31 @@
               <a class="nav-link active" aria-current="page" href="#">Créer un Évènement</a>
             </li>
 
-            <!-- il faudra mettre un IF ici pour changer selon l'utilisateur est logged_in ou pas -->
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Mon Profil
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">Voir Profil</a></li>
-                <li><a class="dropdown-item" href="#">Se Déconnecter</a></li>
-              </ul>
-            </li>
+            <!-- si l'utilisateur est logged_in -->
+            <% if current_user %>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Mon Profil
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li class="dropdown-item"><%= link_to 'Voir mon Profil', user_path(current_user) %></li>
+                  <li class="dropdown-item"><%= link_to 'Se Déconnecter', destroy_user_session_path %></li>
+                </ul>
+              </li>
 
-            <!-- il faudra mettre un ELSE ici pour le cas où l'utilisateur n'est pas encore connecté -->
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Connexion
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <% else %>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Connexion
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li class="dropdown-item"><%= link_to 'Créer un compte', new_user_session_path %></li>
+                  <li class="dropdown-item"><%= link_to 'Se Connecter', new_user_registration_path %></li>
+                </ul>
+              </li>
 
-                <li class="dropdown-item"><%= link_to 'Créer un compte', new_user_registration_path %></li>
-                <li><a class="dropdown-item" href="#">Se Connecter</a></li>
-              </ul>
-            </li>
+            <% end %>
+
 
           </ul>
 
