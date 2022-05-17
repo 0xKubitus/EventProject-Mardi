@@ -22,5 +22,3 @@ class UserMailer < ApplicationMailer
 
 
 end # fin class UserMailer
-class UserMailer < ApplicationMailer
-end
