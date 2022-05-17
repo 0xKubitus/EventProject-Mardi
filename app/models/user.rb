@@ -3,6 +3,8 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+         
   after_create :welcome_send #permet de lancer automatiquement cette methode après chaque création d'1 nouveau User
 
   #validates :email, :first_name, :last_name, :encrypted_password, presence: true
