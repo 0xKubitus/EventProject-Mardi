@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  devise_for :users
+
+
   resources :users, only: [:new, :create, :show, :index, :destroy]
   
   resources :events, only: [:new, :create, :show, :index, :destroy] do
@@ -7,6 +10,7 @@ Rails.application.routes.draw do
   end
   
   
+  root to: 'events#index'
   
   
   

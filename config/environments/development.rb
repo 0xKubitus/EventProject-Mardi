@@ -37,6 +37,8 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 } #Grâce à ça, quand tu cliqueras sur "réinitialiser mon mot de passe" pour la tester, l'application ne plantera pas.
+
     #LETTER_OPENER
   #config.action_mailer.delivery_method = :letter_opener
   config.action_mailer.perform_deliveries = true
