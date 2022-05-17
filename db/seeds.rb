@@ -10,7 +10,7 @@ Attendance.destroy_all
     last_name: Faker::Name.last_name,
     bio: Faker::TvShows::BojackHorseman.tongue_twister,
     email: "testkubitus#{i}@yopmail.com",
-    encrypted_password: Faker::Lorem.characters(number: 6, min_numeric: 1)
+    password: Faker::Lorem.characters(number: 6, min_numeric: 1)
   )
 end
 
