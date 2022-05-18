@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
-  def sign_up
+  before_action :authenticate_user!, only: [:show, :destroy]
+
+  def new
     @user = User.new
   end
 
