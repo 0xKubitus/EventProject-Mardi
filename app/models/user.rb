@@ -1,6 +1,6 @@
 class User < ApplicationRecord
 
-  after_create :welcome_send #permet de lancer automatiquement cette methode après chaque création d'1 nouveau User
+  #after_create :welcome_send #permet de lancer automatiquement cette methode après chaque création d'1 nouveau User
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
