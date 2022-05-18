@@ -2,11 +2,12 @@ Rails.application.routes.draw do
 
   root to: 'events#index'
 
+  devise_for :users
+
   get 'static_pages/index'
   get 'static_pages/secret'
 
-  devise_for :users
-
+  
   resources :users 
   
   resources :events do
