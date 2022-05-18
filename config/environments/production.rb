@@ -91,4 +91,8 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  #dire à Rails "pour la production (sur Heroku), l'URL de mon app est : monapp.herokuapp.com"
+  config.action_mailer.default_url_options = { :host => 'https://eventproject-mardi-kubitus.herokuapp.com' }
+
 end
