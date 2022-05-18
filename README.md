@@ -11,7 +11,7 @@ pour tester le programme, bien penser à:
 AUSSI, A PRIORI IL FAUT RENOUVELER LA CLE API DE SENDGRID A CHAQUE ESSAI (est-ce du à la version gratuite ou c'est moi qui sait pas m'en servir ?!)
 
 Process = créer une nouvelle clé sur SendGrid, puis la mettre dans le fichier .env, puis faire bundle install, puis faire:
- 'heroku config:set SENDGRID_LOGIN=apikey SENDGRID_PWD=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'
+ 'heroku config:set SENDGRID_LOGIN=apikey SENDGRID_PWD=SG.sbborX6jQyuQyQW' (bcp plus long en vrai)
  
  (en remplacant SENDGRID_PWD par la nouvelle clé)
  
