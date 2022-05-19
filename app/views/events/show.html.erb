@@ -4,8 +4,11 @@
 <p>Lieu : <%= @event.location %></p>
 <p>Organisé par : <%= @event.admin.first_name %> <%= @event.admin.last_name %></p>
 <p>Date de l'évènement : <%= @event.start_date %></p>
-<p>Durée : <%= @event.duration/60/24 %>jours (<%= @event.duration/60 %>heures)</p>
+<p>Durée : <%= ((@event.duration/60)/24) %>jours (<%= @event.duration/60 %>heures)</p>
 <p>Prix : <%= @event.price %>€</p>
 <br>
 
-<a class="btn btn-primary btn-lg" href="<%= new_event_attendance_path(:id) %>" role="button">Réservation</a>
+<!-- si un utilisateur est connecté, et que ce dernier n'est ni créateur, ni déjà participant à l'événement, ... -->
+<!-- ... un lien "rejoindre l'événement" doit être visible sur la page : -->
+<!-- A AJOUTER !!! -->
+<%= button_to "Passer Commande", orders_path(total: @event.price), class: "btn btn-primary btn-lg", remote: true %>
