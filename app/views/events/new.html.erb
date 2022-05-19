@@ -1,2 +1,58 @@
-<h1>Events#new</h1>
-<p>Find me in app/views/events/new.html.erb</p>
+<main role="main">
+
+      <!-- Main jumbotron for a primary marketing message or call to action -->
+      <div class="jumbotron">
+        <div class="container">
+          <h1 class="display-3">Crée ton event !</h1>
+        </div>
+      </div>
+
+      <div class="container mt-5  ">
+        <!-- Example row of columns -->
+        <div class="row">
+          <div class="col-md-12">
+
+            <h3>Quels sont les détails de ton event ?</h3>
+            <br>
+              <%= form_tag url_for(action: 'create'), method: "post" do %>
+                <div class="row">
+
+                  <div class="col-sm-4">
+                    <h5><%= label_tag 'Date' %></h5>
+                    <%= datetime_local_field_tag 'start_date', @event.start_date, class: "form-control" %>
+
+                    <h5><%= label_tag 'Durée (en min)' %></h5>
+                    <%= number_field_tag 'duration', @event.duration, class: "form-control", value: 60 %>
+
+                    <h5><%= label_tag 'Titre' %></h5>
+                    <%= text_field_tag 'title', @event.title, class: "form-control" %>
+
+                  </div>
+
+                  <div class="col-sm-4">
+                  <h5><%= label_tag 'Description' %></h5>
+                  <%= text_area_tag 'description', @event.description, class: "form-control" %>
+
+                  <h5><%= label_tag 'Prix' %></h5>
+                  <%= number_field_tag 'price', @event.price, class: "form-control" %>
+
+                  <h5><%= label_tag 'Lieu' %></h5>
+                  <%= text_field_tag 'location', @event.location, class: "form-control" %>
+                  </div>
+
+
+                  <div class="col-sm-4 mt-5">
+                    <%= submit_tag "OK" %>
+                  </div>
+
+                </div>
+              <% end %>
+          </div>
+          
+        </div>
+
+        <hr>
+
+      </div> <!-- /container -->
+
+    </main>
