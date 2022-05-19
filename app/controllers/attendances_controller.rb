@@ -1,7 +1,7 @@
 class AttendancesController < ApplicationController
 
   def new
-    @attendance = Attendance.new(event: Event.find(params[:event_id]), attendee: current_user)
+    @attendance = Attendance.new
   end
 
   def create

@@ -7,4 +7,5 @@
 <p>Durée : <%= @event.duration/60/24 %>jours (<%= @event.duration/60 %>heures)</p>
 <p>Prix : <%= @event.price %>€</p>
 <br>
-<a class="btn btn-primary btn-lg" href="<%= new_event_attendance_path %>" role="button">Réservation</a>
+
+<a class="btn btn-primary btn-lg" href="<%= new_event_attendance_path(:id) %>" role="button">Réservation</a>

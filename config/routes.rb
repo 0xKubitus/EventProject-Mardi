@@ -1,10 +1,5 @@
 Rails.application.routes.draw do
 
-
-  get 'attendances/new'
-  get 'attendances/create'
-  get 'attendances/show'
-  get 'attendances/index'
   root to: 'events#index'
 
   devise_for :users
