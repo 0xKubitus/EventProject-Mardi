@@ -1,2 +1,7 @@
-<h1>Events#show</h1>
-<p>Find me in app/views/events/show.html.erb</p>
+<h1><%= @event.title %></h1>
+<p><%= @event.description %></p>
+<p>Lieu : <%= @event.location %></p>
+<p>Organisé par : <%= @event.admin.first_name %> <%= @event.admin.last_name %></p>
+<p>Date de l'évènement : <%= @event.start_date %></p>
+<p>Durée : <%= @event.duration/60/24 %>jours (<%= @event.duration/60 %>heures)</p>
+<p>Prix : <%= @event.price %>€</p>

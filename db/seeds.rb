@@ -7,7 +7,7 @@ Attendance.destroy_all
 5.times do |i|
   User.create(
     first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name,
+    last_name: Faker::TvShows::GameOfThrones.house,
     bio: Faker::TvShows::BojackHorseman.tongue_twister,
     email: "testkubitus#{i}@yopmail.com",
     password: Faker::Lorem.characters(number: 6, min_numeric: 1)
@@ -18,7 +18,7 @@ end
 3.times do |i|
   event = Event.new(
     title: Faker::Fantasy::Tolkien.poem,
-    description: Faker::Lorem.sentences(number: 2),
+    description: Faker::TvShows::GameOfThrones.quote,
     location: Faker::Fantasy::Tolkien.location,
     start_date: Faker::Date.between(from: Date.today, to: 3.year.from_now),
     duration: (rand(1..2016) * 5), # <- 2016 x 5 = 10080 = 7 x 24 x 60 = nbre de minutes dans 7 jours
